@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home1 - InkForge</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* RTL */
+    .rtl {
+      direction: rtl;
+    }
+
+    [dir="rtl"] .title {
+      margin-right: 20px !important;
+    }
+
+    /* THEME TOGGLE */
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    [data-theme="dark"] section,
+    [data-theme="dark"] .card {
+      background-color: #111111 !important;
+      border-color: #333333 !important;
+    }
+
+    [data-theme="dark"] .btn,
+    [data-theme="dark"] .btn1:hover {
+      color: #000000 !important;
+    }
+
+    [data-theme="dark"] body,
+    [data-theme="dark"] p,
+    [data-theme="dark"] h1,
+    [data-theme="dark"] h2,
+    [data-theme="dark"] h3,
+    [data-theme="dark"] h4,
+    [data-theme="dark"] h5,
+    [data-theme="dark"] h6,
+    [data-theme="dark"] span,
+    [data-theme="dark"] li,
+    [data-theme="dark"] a,
+    [data-theme="dark"] label,
+    [data-theme="dark"] small,
+    [data-theme="dark"] strong,
+    [data-theme="dark"] .title {
+      color: #ffffff !important;
+    }
+
+    /* ===== HOME PAGE DARK MODE OVERRIDES ===== */
+
+    /* main wrapper */
+    [data-theme="dark"] main {
+      background-color: #111111 !important;
+    }
+
+    /* ---- Background overrides ---- */
+
+    /* bg-white sections & cards */
+    [data-theme="dark"] .bg-white {
+      background-color: #111111 !important;
+    }
+
+    /* bg-stone-50 & bg-slate-50 sections */
+    [data-theme="dark"] .bg-stone-50,
+    [data-theme="dark"] .bg-slate-50 {
+      background-color: #0a0a0a !important;
+    }
+
+    /* Cards with rounded corners (white bg) — slightly lighter for depth */
+    [data-theme="dark"] .bg-white.rounded-3xl,
+    [data-theme="dark"] .bg-white.rounded-2xl {
+      background-color: #1a1a1a !important;
+      border: 1px solid #2a2a2a !important;
+    }
+
+    /* Cards with stone-50 bg (testimonials, upcoming releases) */
+    [data-theme="dark"] .bg-stone-50.rounded-3xl {
+      background-color: #1a1a1a !important;
+      border: 1px solid #2a2a2a !important;
+    }
+
+    /* stone-100 tags (creator skill badges) */
+    [data-theme="dark"] .bg-stone-100 {
+      background-color: #2a2a2a !important;
+      color: #d4d4d8 !important;
+    }
+
+    /* stone-200 timeline line */
+    [data-theme="dark"] .bg-stone-200 {
+      background-color: #333333 !important;
+    }
+
+    /* Service card icon containers (bg-amber-50) */
+    [data-theme="dark"] .bg-amber-50 {
+      background-color: #2a1f00 !important;
+    }
+
+    /* ---- Text color overrides ---- */
+
+    /* zinc-900 headings — invisible on dark bg without this */
+    [data-theme="dark"] .text-zinc-900 {
+      color: #f4f4f5 !important;
+    }
+
+    /* zinc-700 text (testimonial quotes) */
+    [data-theme="dark"] .text-zinc-700 {
+      color: #d4d4d8 !important;
+    }
+
+    /* zinc-600 body text */
+    [data-theme="dark"] .text-zinc-600 {
+      color: #a1a1aa !important;
+    }
+
+    /* zinc-500 subtexts */
+    [data-theme="dark"] .text-zinc-500 {
+      color: #a1a1aa !important;
+    }
+
+    /* slate text overrides (kept for any legacy/navbar usage) */
+    [data-theme="dark"] .text-slate-900 {
+      color: #f1f5f9 !important;
+    }
+
+    [data-theme="dark"] .text-slate-800 {
+      color: #e2e8f0 !important;
+    }
+
+    [data-theme="dark"] .text-slate-600,
+    [data-theme="dark"] .text-slate-500 {
+      color: #9ca3af !important;
+    }
+
+    [data-theme="dark"] .text-slate-400 {
+      color: #94a3b8 !important;
+    }
+
+    [data-theme="dark"] .text-slate-300 {
+      color: #cbd5e1 !important;
+    }
+
+    [data-theme="dark"] .text-slate-200 {
+      color: #2a2a2a !important;
+    }
+
+    /* ---- Border overrides ---- */
+    [data-theme="dark"] .border-slate-100,
+    [data-theme="dark"] .border-slate-200 {
+      border-color: #2a2a2a !important;
+    }
+
+    /* ---- Button / link overrides ---- */
+
+    /* "Explore Dashboard" outlined button */
+    [data-theme="dark"] a.border-slate-900.text-slate-900 {
+      border-color: #ffffff !important;
+      color: #ffffff !important;
+    }
+    [data-theme="dark"] a.border-slate-900.text-slate-900:hover {
+      background-color: #ffffff !important;
+      color: #111111 !important;
+    }
+
+    /* White bg buttons in CTA */
+    [data-theme="dark"] a.bg-white.text-slate-900 {
+      background-color: #1a1a1a !important;
+      color: #ffffff !important;
+      border: 1px solid #333333 !important;
+    }
+    [data-theme="dark"] a.bg-white.text-slate-900:hover {
+      background-color: #2a2a2a !important;
+    }
+
+    /* ---- Misc overrides ---- */
+
+    /* How-it-works step cards */
+    [data-theme="dark"] .bg-white.lg\:bg-transparent {
+      background-color: #1a1a1a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    /* Customer portal: feature list hover */
+    [data-theme="dark"] li:hover.hover\:bg-slate-50 {
+      background-color: #1f1f1f !important;
+    }
+
+    /* Customer portal security badge */
+    [data-theme="dark"] .bg-white.p-4.rounded-xl {
+      background-color: #1a1a1a !important;
+      border-color: #2a2a2a !important;
+    }
+
+    /* Timeline dot border in dark mode */
+    [data-theme="dark"] .border-white {
+      border-color: #0a0a0a !important;
+    }
+  </style>
+</head>
+
+<body class="font-sans">
+  <!-- navbar -->
+  <div id="navbar"></div>
+  <!-- HERO BANNER -->
+<section class="relative min-h-screen bg-[#0B0B0B] overflow-hidden">
+
+    <!-- Background Cover -->
+    <div class="absolute inset-0">
+        <img
+            src="images/bg1.jpg"
+            class="w-full h-full object-cover"
+            alt=""
+        >
+        <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/50"></div>
+        <div class="absolute inset-0 bg-gradient-to-t from-[#0B0B0B] via-transparent to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 min-h-screen flex items-center justify-center">
+
+        <div class="max-w-3xl text-center">
+
+            <h1 class="text-6xl lg:text-8xl font-black text-white leading-none mb-6 mt-20">
+                SHADOWS OF
+                <span class="block text-[#8B4513]">
+                    ETERNITY
+                </span>
+            </h1>
+
+            <p class="text-xl text-zinc-300 max-w-2xl leading-relaxed mb-10">
+                A haunting journey through forgotten worlds, immortal warriors,
+                and ancient secrets. Discover the latest award-winning graphic
+                novel from our independent publishing studio.
+            </p>
+
+            <div class="flex flex-wrap gap-4 justify-center mb-14">
+
+                <a href="comics.html"
+                    class="px-8 py-4 bg-[#8B4513] text-white rounded-xl font-semibold hover:bg-[#A0522D] transition">
+                   Explore Collection
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-16">
+
+            <div>
+                <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+                    Latest Collection
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-3">
+                    Featured Graphic Novels
+                </h2>
+
+                <p class="text-zinc-600 mt-4 max-w-2xl">
+                    Explore our latest releases, award-winning titles, and reader favorites talented artists and storytellers around the world.
+                </p>
+            </div>
+
+            <a href="#"
+                class="inline-flex items-center gap-2 text-[#8B4513] font-semibold hover:gap-4 transition-all duration-300">
+                View All Releases →
+            </a>
+
+        </div>
+
+        <!-- Comics Grid -->
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Card 1 -->
+            <div class="group">
+
+                <div class="overflow-hidden rounded-3xl shadow-lg">
+
+                    <img
+                        src="images/book1.jpg"
+                        alt=""
+                        class="w-full h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                </div>
+
+                <div class="mt-5">
+
+                    <span class="text-xs font-semibold text-[#8B4513] uppercase tracking-widest">
+                        Fantasy
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-zinc-900 mt-2">
+                        Crimson Legacy
+                    </h3>
+
+                    <p class="text-zinc-600 mt-3">
+                        An epic tale of kingdoms, prophecy, forgotten magic.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Card 2 -->
+            <div class="group">
+
+                <div class="overflow-hidden rounded-3xl shadow-lg">
+
+                    <img
+                        src="images/book2.jpg"
+                        alt=""
+                        class="w-full h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                </div>
+
+                <div class="mt-5">
+
+                    <span class="text-xs font-semibold text-[#8B4513] uppercase tracking-widest">
+                        Sci-Fi
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-zinc-900 mt-2">
+                        The Last Oracle
+                    </h3>
+
+                    <p class="text-zinc-600 mt-3">
+                        A futuristic mystery uncovering secrets stars.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Card 3 -->
+            <div class="group">
+
+                <div class="overflow-hidden rounded-3xl shadow-lg">
+
+                    <img
+                        src="images/book3.jpg"
+                        alt=""
+                        class="w-full h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                </div>
+
+                <div class="mt-5">
+
+                    <span class="text-xs font-semibold text-[#8B4513] uppercase tracking-widest">
+                        Adventure
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-zinc-900 mt-2">
+                        Void Hunters
+                    </h3>
+
+                    <p class="text-zinc-600 mt-3">
+                        Brave explorers venture into unknown dimensions.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Card 4 -->
+            <div class="group">
+
+                <div class="overflow-hidden rounded-3xl shadow-lg">
+
+                    <img
+                        src="images/book4.jpg"
+                        alt=""
+                        class="w-full h-[420px] object-cover group-hover:scale-110 transition duration-700">
+
+                </div>
+
+                <div class="mt-5">
+
+                    <span class="text-xs font-semibold text-[#8B4513] uppercase tracking-widest">
+                        Dark Fantasy
+                    </span>
+
+                    <h3 class="text-2xl font-bold text-zinc-900 mt-2">
+                        Broken Kingdom
+                    </h3>
+
+                    <p class="text-zinc-600 mt-3">
+                        A kingdom on the brink of collapse fights for survival.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-24 bg-stone-50">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-16">
+
+            <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+                Meet The Talent
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+                Creators Behind The Stories
+            </h2>
+
+            <p class="text-zinc-600 mt-5 leading-relaxed">
+                Discover the visionary artists, writers, and illustrators who bring unforgettable worlds and characters to life.
+            </p>
+
+        </div>
+
+        <!-- Creators Grid -->
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Creator 1 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="flex items-center gap-5 mb-6">
+
+                    <img
+                        src="images/team2.avif"
+                        alt=""
+                        class="w-20 h-20 rounded-full object-cover">
+
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-900">
+                            Ethan Carter
+                        </h3>
+
+                        <p class="text-[#8B4513] font-medium">
+                            Lead Writer
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Award-winning storyteller known for crafting immersive fantasy universes and narratives.
+                </p>
+
+                <div class="mt-6 flex gap-3">
+                    <span class="px-3 py-1 bg-stone-100 rounded-full text-sm">
+                        Fantasy
+                    </span>
+                    <span class="px-3 py-1 bg-stone-100 rounded-full text-sm">
+                        Adventure
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Creator 2 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="flex items-center gap-5 mb-6">
+
+                    <img
+                        src="images/team1.avif"
+                        alt=""
+                        class="w-20 h-20 rounded-full object-cover">
+
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-900">
+                            Sophia Hayes
+                        </h3>
+
+                        <p class="text-[#8B4513] font-medium">
+                            Comic Illustrator
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Renowned for detailed illustrations, cinematic panels, and visually striking character designs.
+                </p>
+
+                <div class="mt-6 flex gap-3">
+                    <span class="px-3 py-1 bg-stone-100 rounded-full text-sm">
+                        Art
+                    </span>
+                    <span class="px-3 py-1 bg-stone-100 rounded-full text-sm">
+                        Concept Design
+                    </span>
+                </div>
+
+            </div>
+
+            <!-- Creator 3 -->
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="flex items-center gap-5 mb-6">
+
+                    <img
+                        src="images/team3.avif"
+                        alt=""
+                        class="w-20 h-20 rounded-full object-cover">
+
+                    <div>
+                        <h3 class="text-xl font-bold text-zinc-900">
+                            Lucas Morgan
+                        </h3>
+
+                        <p class="text-[#8B4513] font-medium">
+                            Graphic Artist
+                        </p>
+                    </div>
+
+                </div>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Creates breathtaking visual worlds  science fiction, mythology, and modern storytelling.
+                </p>
+
+                <div class="mt-6 flex gap-3">
+                    <span class="px-3 py-1 bg-stone-100 rounded-full text-sm">
+                        Sci-Fi
+                    </span>
+                    <span class="px-3 py-1 bg-stone-100 rounded-full text-sm">
+                        Worldbuilding
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Bottom Stats -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 mt-20 text-center">
+
+            <div>
+                <h3 class="text-4xl font-black text-[#8B4513]">35+</h3>
+                <p class="text-zinc-600 mt-2">Creative Artists</p>
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-black text-[#8B4513]">120+</h3>
+                <p class="text-zinc-600 mt-2">Published Works</p>
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-black text-[#8B4513]">15+</h3>
+                <p class="text-zinc-600 mt-2">Industry Awards</p>
+            </div>
+
+            <div>
+                <h3 class="text-4xl font-black text-[#8B4513]">50K+</h3>
+                <p class="text-zinc-600 mt-2">Readers Worldwide</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="py-24 bg-white overflow-hidden">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <!-- Header -->
+        <div class="text-center max-w-3xl mx-auto mb-20">
+
+            <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+                Publishing Roadmap
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+                Upcoming Releases
+            </h2>
+
+            <p class="text-zinc-600 mt-5 leading-relaxed">
+                Follow our publishing schedule and discover the next generation
+                of graphic novels arriving throughout the year.
+            </p>
+
+        </div>
+
+        <!-- Timeline -->
+        <div class="relative">
+
+            <!-- Desktop Timeline Line -->
+            <div class="absolute top-14 left-0 w-full h-1 bg-stone-200 hidden lg:block"></div>
+
+            <!-- Cards -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch">
+
+                <!-- Card 1 -->
+                <div class="relative h-full">
+
+
+                    <div class="bg-stone-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+
+                        <img
+                            src="images/book5.jpg"
+                            class="w-full h-72 object-cover"
+                            alt="Comic Cover">
+
+                        <div class="p-6 flex flex-col flex-grow">
+
+                            <span class="inline-block w-fit px-3 py-1 rounded-full bg-[#8B4513]/10 text-[#8B4513] text-xs font-semibold mb-4">
+                                July 2026
+                            </span>
+
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-3">
+                                Crimson Legacy II
+                            </h3>
+
+                            <p class="text-zinc-600 flex-grow">
+                                Continue the epic fantasy saga with heroes,
+                                kingdoms, and ancient secrets.
+                            </p>
+
+                            <button class="mt-6 text-[#8B4513] font-semibold hover:translate-x-1 transition self-start text-left">
+                                Learn More →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 2 -->
+                <div class="relative h-full">
+
+
+                    <div class="bg-stone-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+
+                        <img
+                            src="images/book6.jpg"
+                            class="w-full h-72 object-cover"
+                            alt="Comic Cover">
+
+                        <div class="p-6 flex flex-col flex-grow">
+
+                            <span class="inline-block w-fit px-3 py-1 rounded-full bg-[#8B4513]/10 text-[#8B4513] text-xs font-semibold mb-4">
+                                August 2026
+                            </span>
+
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-3">
+                                Echoes  Tomorrow
+                            </h3>
+
+                            <p class="text-zinc-600 flex-grow">
+                                A thrilling sci-fi mystery exploring parallel realities
+                                and hidden dimensions.
+                            </p>
+
+                            <button class="mt-6 text-[#8B4513] font-semibold hover:translate-x-1 transition self-start text-left">
+                                Learn More →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 3 -->
+                <div class="relative h-full">
+
+
+                    <div class="bg-stone-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+
+                        <img
+                            src="images/book7.jpg"
+                            class="w-full h-72 object-cover"
+                            alt="Comic Cover">
+
+                        <div class="p-6 flex flex-col flex-grow">
+
+                            <span class="inline-block w-fit px-3 py-1 rounded-full bg-[#8B4513]/10 text-[#8B4513] text-xs font-semibold mb-4">
+                                September 2026
+                            </span>
+
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-3">
+                                Voids Hunters
+                            </h3>
+
+                            <p class="text-zinc-600 flex-grow">
+                                Space explorers venture universe
+                                searching  forgotten of the civilizations.
+                            </p>
+
+                            <button class="mt-6 text-[#8B4513] font-semibold hover:translate-x-1 transition self-start text-left">
+                                Learn More →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Card 4 -->
+                <div class="relative h-full">
+
+                    <div class="bg-stone-50 rounded-3xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 h-full flex flex-col">
+
+                        <img
+                            src="images/book8.png"
+                            class="w-full h-72 object-cover"
+                            alt="Comic Cover">
+
+                        <div class="p-6 flex flex-col flex-grow">
+
+                            <span class="inline-block w-fit px-3 py-1 rounded-full bg-[#8B4513]/10 text-[#8B4513] text-xs font-semibold mb-4">
+                                October 2026
+                            </span>
+
+                            <h3 class="text-2xl font-bold text-zinc-900 mb-3">
+                                Fallen Kingdom
+                            </h3>
+
+                            <p class="text-zinc-600 flex-grow">
+                                A dark fantasy tale of rebellion, power,
+                                destiny, and the fight for survival.
+                            </p>
+
+                           
+                            <button class="mt-6 text-[#8B4513] font-semibold hover:translate-x-1 transition self-start text-left">
+                                Learn More →
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OUR STUDIO -->
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+
+            <div>
+
+                <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+                    Our Studio
+                </span>
+
+                <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4 leading-tight">
+                    Independent Comics. <br>
+                    <span class="text-[#8B4513]">Bold Stories.</span>
+                </h2>
+
+                <p class="text-zinc-600 mt-6 leading-relaxed text-lg">
+                    InkForge was founded by a collective of passionate storytellers who
+                    believe every artist deserves a platform. We are an independent comic
+                    book publisher and graphic novel studio dedicated to amplifying
+                    diverse voices, bold narratives, and groundbreaking artistry.
+                </p>
+
+                <p class="text-zinc-600 mt-4 leading-relaxed">
+                    From fantasy epics to sci-fi thrillers, horror anthologies to slice-of-life
+                    dramas — we publish stories that push boundaries and stay with readers
+                    long after the final page.
+                </p>
+
+                <div class="flex flex-wrap gap-8 mt-10">
+
+                    <div>
+                        <h3 class="text-3xl font-black text-[#8B4513]">2018</h3>
+                        <p class="text-zinc-500 text-sm mt-1">Founded</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-black text-[#8B4513]">50+</h3>
+                        <p class="text-zinc-500 text-sm mt-1">Artists Published</p>
+                    </div>
+
+                    <div>
+                        <h3 class="text-3xl font-black text-[#8B4513]">200+</h3>
+                        <p class="text-zinc-500 text-sm mt-1">Titles Released</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="relative">
+
+                <img
+                    src="images/img1.jpg"
+                    alt="Our studio team"
+                    class="rounded-3xl shadow-2xl w-full h-[500px] object-cover">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- PUBLISHING SERVICES -->
+<section class="py-24 bg-stone-50">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+
+            <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+                What We Offer
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+                Publishing Services
+            </h2>
+
+            <p class="text-zinc-600 mt-5 leading-relaxed">
+                From manuscript to store shelves — we partner with creators at every stage
+                of the publishing journey.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="bi bi-pencil-fill text-2xl text-[#8B4513]"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-zinc-900 mb-4">
+                    Manuscript Review
+                </h3>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Our editorial team provides professional,
+                    developmental editing, and story coaching refine narrative.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="bi bi-brush-fill text-2xl text-[#8B4513]"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-zinc-900 mb-4">
+                    Art & Illustration
+                </h3>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Connect with skilled illustrators, colorists, and letterers
+                    bring vision life with visual storytelling with art.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="bi bi-printer-fill text-2xl text-[#8B4513]"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-zinc-900 mb-4">
+                    Print & Distribution
+                </h3>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    High-quality printing with global distribution to comic shops,
+                    bookstores, and online retailers worldwide.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="bi bi-megaphone-fill text-2xl text-[#8B4513]"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-zinc-900 mb-4">
+                    Marketing & PR
+                </h3>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Campaign strategy, press releases, book tours, social media
+                    promotion to get graphic novel front readers.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="bi bi-people-fill text-2xl text-[#8B4513]"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-zinc-900 mb-4">
+                    Partnerships
+                </h3>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Fair revenue sharing, royalty models, and creator-owned contracts
+                    that respect your intellectual property.
+                </p>
+
+            </div>
+
+            <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+
+                <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+                    <i class="bi bi-rocket-takeoff-fill text-2xl text-[#8B4513]"></i>
+                </div>
+
+                <h3 class="text-2xl font-bold text-zinc-900 mb-4">
+                    Crowdfunding 
+                </h3>
+
+                <p class="text-zinc-600 leading-relaxed">
+                    Launch and manage successful Kickstarter campaigns with
+                    experienced production fulfillment team.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="py-24 bg-white">
+
+    <div class="max-w-7xl mx-auto px-6">
+
+        <div class="text-center max-w-3xl mx-auto mb-16">
+
+            <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+                Community Voices
+            </span>
+
+            <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+                What Creators & Readers Say
+            </h2>
+
+            <p class="text-zinc-600 mt-5 leading-relaxed">
+                Hear from the artists, writers, and fans who make our community thrive.
+            </p>
+
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="bg-stone-50 rounded-3xl p-8 shadow-sm">
+
+                <div class="flex gap-1 text-[#8B4513] mb-5">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="text-zinc-700 leading-relaxed mb-6">
+                    "InkForge gave me complete creative control over my debut graphic
+                    novel. The editorial team helped me refine my story without losing
+                    my voice. An incredible home independent creators."
+                </p>
+
+                <div class="flex items-center gap-4">
+
+                    <img
+                        src="images/team2.avif"
+                        alt=""
+                        class="w-12 h-12 rounded-full object-cover">
+
+                    <div>
+                        <h4 class="font-bold text-zinc-900">Marcus Rivera</h4>
+                        <p class="text-zinc-500 text-sm">Graphic Novelist</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bg-stone-50 rounded-3xl p-8 shadow-sm">
+
+                <div class="flex gap-1 text-[#8B4513] mb-5">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="text-zinc-700 leading-relaxed mb-6">
+                    "As an illustrator, finding a publisher that values art as much as
+                    story was a dream. InkForge's art direction team pushed my work to
+                    new heights. Proud to be part of their roster."
+                </p>
+
+                <div class="flex items-center gap-4">
+
+                    <img
+                        src="images/team1.avif"
+                        alt=""
+                        class="w-12 h-12 rounded-full object-cover">
+
+                    <div>
+                        <h4 class="font-bold text-zinc-900">Aiko Tanaka</h4>
+                        <p class="text-zinc-500 text-sm">Illustrator & Colorist</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="bg-stone-50 rounded-3xl p-8 shadow-sm">
+
+                <div class="flex gap-1 text-[#8B4513] mb-5">
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                    <i class="bi bi-star-fill"></i>
+                </div>
+
+                <p class="text-zinc-700 leading-relaxed mb-6">
+                    "I've been collecting graphic novels for over a decade, and InkForge's
+                    titles consistently stand out. The production quality, the storytelling,
+                    the art — they're redefining independent comics."
+                </p>
+
+                <div class="flex items-center gap-4">
+
+                    <img
+                        src="images/team3.avif"
+                        alt=""
+                        class="w-12 h-12 rounded-full object-cover">
+
+                    <div>
+                        <h4 class="font-bold text-zinc-900">David Chen</h4>
+                        <p class="text-zinc-500 text-sm">Reader & Collector</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+  <!-- FOOTER -->
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+
+</html>

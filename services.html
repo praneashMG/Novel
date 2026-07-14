@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - InkForge</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --home-bg: #ffffff; --text-color: #111111; }
+    [data-theme="dark"] { --home-bg: #000000; --text-color: #ffffff; }
+    body { background-color: var(--home-bg) !important; color: var(--text-color); transition: background-color 0.4s ease, color 0.4s ease; }
+
+    /* Dark mode: section & card backgrounds */
+    [data-theme="dark"] section { background-color: #000000 !important; }
+    [data-theme="dark"] .card { background-color: #111111 !important; border-color: #333333 !important; }
+    [data-theme="dark"] main { background-color: #000000 !important; }
+
+    /* Dark mode: all text elements */
+    [data-theme="dark"] body, [data-theme="dark"] p, [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6, [data-theme="dark"] span, [data-theme="dark"] li, [data-theme="dark"] a, [data-theme="dark"] label, [data-theme="dark"] small, [data-theme="dark"] strong { color: #ffffff !important; }
+    [data-theme="dark"] .text-stone-500, [data-theme="dark"] .text-stone-600, [data-theme="dark"] .text-zinc-500, [data-theme="dark"] .text-zinc-600 { color: #9ca3af !important; }
+    [data-theme="dark"] .text-stone-900, [data-theme="dark"] .text-zinc-900 { color: #f1f5f9 !important; }
+
+    /* Dark mode: utility background overrides */
+    [data-theme="dark"] .bg-white, [data-theme="dark"] .bg-stone-50 { background-color: #000000 !important; }
+    [data-theme="dark"] .bg-amber-50 { background-color: #2a1f00 !important; }
+
+    /* Dark mode: cards & rounded containers get slightly lighter bg for contrast */
+    [data-theme="dark"] .service-card { background-color: #141414 !important; border: 1px solid #2a2a2a !important; }
+    [data-theme="dark"] .pricing-card { background-color: #141414 !important; border-color: #2a2a2a !important; }
+    [data-theme="dark"] .pricing-card.border-\[\#8B4513\] { border-color: #8B4513 !important; }
+    [data-theme="dark"] .bg-white.rounded-2xl, [data-theme="dark"] .bg-white.rounded-3xl { background-color: #141414 !important; border: 1px solid #2a2a2a !important; }
+
+    /* Dark mode: FAQ cards */
+    [data-theme="dark"] #faqContainer .bg-white { background-color: #141414 !important; border: 1px solid #2a2a2a !important; }
+    [data-theme="dark"] .faq-answer { color: #9ca3af !important; }
+    [data-theme="dark"] .faq-btn span { color: #f1f5f9 !important; }
+
+    /* Dark mode: service icon containers */
+    [data-theme="dark"] .service-icon,
+    [data-theme="dark"] .step-icon { background-color: #1a1a1a !important; border-color: #8B4513 !important; }
+
+    /* Dark mode: brown icons to white */
+    [data-theme="dark"] .text-\[\#8B4513\] { color: #ffffff !important; }
+
+    /* Dark mode: step numbers to white */
+    [data-theme="dark"] .step-number { color: rgba(255, 255, 255, 0.15) !important; }
+
+    /* Dark mode: borders */
+    [data-theme="dark"] .border-stone-100, [data-theme="dark"] .border-stone-200 { border-color: #2a2a2a !important; }
+    [data-theme="dark"] .border-transparent { border-color: #2a2a2a !important; }
+
+    /* Dark mode: gradient overrides */
+    [data-theme="dark"] .from-white { --tw-gradient-from: #1a1a1a !important; }
+    [data-theme="dark"] .via-white\/30 { --tw-gradient-via: rgba(26,26,26,0.3) !important; }
+
+    .service-card:hover .service-icon {
+      transform: scale(1.1) rotate(-5deg);
+    }
+    .service-icon {
+      transition: transform 0.3s ease;
+    }
+    .pricing-card:hover {
+      transform: translateY(-8px);
+    }
+    .pricing-card {
+      transition: all 0.3s ease;
+    }
+    .step-number {
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(139, 69, 19, 0.1);
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+  <section class="relative min-h-[70vh] bg-[#0B0B0B] overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="images/bg4.jpg" class="w-full h-full object-cover" alt="">
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/60"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 min-h-[60vh] flex items-center justify-center">
+      <div class="max-w-3xl text-center mt-20">
+        <span class="inline-block px-4 py-2 rounded-full bg-[#8B4513]/20 border border-[#8B4513]/30 text-[#D2B48C] text-sm font-semibold mb-6">
+          <i class="bi bi-gear-fill me-2"></i>Our Services
+        </span>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-6">
+          PUBLISHING <span class="text-[#8B4513]">SOLUTIONS</span>
+        </h1>
+        <p class="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+          From script to store shelf — comprehensive publishing services for comic creators and graphic novelists at every stage.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE GRID -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-grid-3x3-gap-fill me-2"></i>What We Offer
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          End-To-End Publishing
+        </h2>
+        <p class="text-zinc-600 mt-5 leading-relaxed">
+          Every service designed to take your project from concept to readers.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="service-card bg-stone-50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="images/service1.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          </div>
+          <div class="px-8 pb-8 relative -mt-10">
+            <div class="service-icon w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-[#8B4513]/10 relative z-10">
+              <i class="bi bi-pencil-fill text-3xl text-[#8B4513]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-900 mb-4">Script</h3>
+            <p class="text-zinc-600 leading-relaxed">Professional script evaluation, developmental editing, and story coaching to refine your narrative structure, dialogue, and pacing.</p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Manuscript Review</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Developmental Editing</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Story Coaching</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card bg-stone-50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="images/service2.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          </div>
+          <div class="px-8 pb-8 relative -mt-10">
+            <div class="service-icon w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-[#8B4513]/10 relative z-10">
+              <i class="bi bi-brush-fill text-3xl text-[#8B4513]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-900 mb-4">Art & Illustration</h3>
+            <p class="text-zinc-600 leading-relaxed">Connect with top-tier illustrators, colorists, letterers, and cover artists who bring your vision to life with stunning visuals.</p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Penciling & Inking</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Coloring & Lettering</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Cover Design</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card bg-stone-50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="images/service3.webp" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          </div>
+          <div class="px-8 pb-8 relative -mt-10">
+            <div class="service-icon w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-[#8B4513]/10 relative z-10">
+              <i class="bi bi-printer-fill text-3xl text-[#8B4513]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-900 mb-4">Print Production</h3>
+            <p class="text-zinc-600 leading-relaxed">High-quality printing with premium paper stocks, binding options, and finishes. From standard comics to deluxe hardcover editions.</p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Premium Paper & Binding</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Hardcover & Softcover</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Foil & Embossing</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card bg-stone-50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="images/service4.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          </div>
+          <div class="px-8 pb-8 relative -mt-10">
+            <div class="service-icon w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-[#8B4513]/10 relative z-10">
+              <i class="bi bi-globe2 text-3xl text-[#8B4513]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-900 mb-4">Distribution</h3>
+            <p class="text-zinc-600 leading-relaxed">Global distribution network reaching comic shops, bookstores, libraries, and online retailers across North America, Europe, and beyond.</p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Diamond & Simon & Schuster</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Amazon & Ingram</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Direct-to-Store</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card bg-stone-50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="images/service5.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          </div>
+          <div class="px-8 pb-8 relative -mt-10">
+            <div class="service-icon w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-[#8B4513]/10 relative z-10">
+              <i class="bi bi-megaphone-fill text-3xl text-[#8B4513]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-900 mb-4">Marketing & PR</h3>
+            <p class="text-zinc-600 leading-relaxed">Strategic campaigns, press releases, review copy distribution, convention appearances, and social media promotion to maximize reach.</p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Press & Media Outreach</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Social Media Campaigns</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Convention Support</li>
+            </ul>
+          </div>
+        </div>
+        <div class="service-card bg-stone-50 rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 overflow-hidden group">
+          <div class="h-48 overflow-hidden relative">
+            <img src="images/service6.jpg" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" alt="">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+          </div>
+          <div class="px-8 pb-8 relative -mt-10">
+            <div class="service-icon w-16 h-16 bg-white/90 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-lg border border-[#8B4513]/10 relative z-10">
+              <i class="bi bi-rocket-takeoff-fill text-3xl text-[#8B4513]"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-zinc-900 mb-4">Crowdfunding</h3>
+            <p class="text-zinc-600 leading-relaxed">End-to-end Kickstarter campaign management — from strategy and rewards to production and fulfillment. We help you launch with confidence.</p>
+            <ul class="mt-6 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Campaign Strategy</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Reward Fulfillment</li>
+              <li class="flex items-center gap-2 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Production Pipeline</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-diagram-3-fill me-2"></i>How It Works
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          Your Publishing Journey
+        </h2>
+        <p class="text-zinc-600 mt-5 leading-relaxed">
+          A streamlined process from pitch to publication.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 relative">
+          <div class="step-number absolute top-4 right-6">01</div>
+          <div class="step-icon w-14 h-14 bg-[#8B4513]/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-md border border-[#8B4513]/10">
+            <i class="bi bi-envelope-paper-fill text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">Submit Pitch</h3>
+          <p class="text-zinc-600">Send us your concept, script sample, and portfolio. Our editorial team reviews within 2 weeks.</p>
+        </div>
+        <div class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 relative">
+          <div class="step-number absolute top-4 right-6">02</div>
+          <div class="step-icon w-14 h-14 bg-[#8B4513]/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-md border border-[#8B4513]/10">
+            <i class="bi bi-chat-dots-fill text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">Creative</h3>
+          <p class="text-zinc-600">Collaborate with our editors, artists, and designers refine your project from script to art.</p>
+        </div>
+        <div class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 relative">
+          <div class="step-number absolute top-4 right-6">03</div>
+          <div class="step-icon w-14 h-14 bg-[#8B4513]/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-md border border-[#8B4513]/10">
+            <i class="bi bi-printer-fill text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">Production</h3>
+          <p class="text-zinc-600">Premium printing, binding, and quality assurance. We handle every detail of manufacturing.</p>
+        </div>
+        <div class="bg-white rounded-3xl shadow-sm hover:shadow-xl transition-all duration-300 p-8 relative">
+          <div class="step-number absolute top-4 right-6">04</div>
+          <div class="step-icon w-14 h-14 bg-[#8B4513]/10 backdrop-blur-sm rounded-2xl flex items-center justify-center mb-6 shadow-md border border-[#8B4513]/10">
+            <i class="bi bi-box-seam-fill text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900 mb-3">Launch & Distribute</h3>
+          <p class="text-zinc-600">Your book hits stores worldwide with full marketing support and campaign promotion.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING TABLE -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-coin me-2"></i>Investment
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          Service Packages
+        </h2>
+        <p class="text-zinc-600 mt-5 leading-relaxed">
+          Flexible options for every budget and project scale.
+        </p>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div class="pricing-card bg-stone-50 rounded-3xl p-8 shadow-sm border-2 border-transparent hover:border-[#8B4513]/30">
+          <h3 class="text-2xl font-bold text-zinc-900">Essential</h3>
+          <p class="text-zinc-500 text-sm mt-1">For independent creators</p>
+          <p class="mt-6"><span class="text-5xl font-black text-zinc-900">$2.9K</span></p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Script Evaluation</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Basic Editing</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Standard Printing</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Digital Distribution</li>
+          </ul>
+          <a href="contact.html" class="mt-8 block w-full text-center py-3 rounded-xl border-2 border-[#8B4513] text-[#8B4513] font-bold hover:bg-[#8B4513] hover:text-white transition">Get Started</a>
+        </div>
+        <div class="pricing-card bg-stone-50 rounded-3xl p-8 shadow-sm border-2 border-[#8B4513] relative">
+          <span class="absolute -top-3 left-1/2 -translate-x-1/2 px-4 py-1 bg-[#8B4513] text-white text-xs font-bold rounded-full">Popular</span>
+          <h3 class="text-2xl font-bold text-zinc-900">Professional</h3>
+          <p class="text-zinc-500 text-sm mt-1">For serious storytellers</p>
+          <p class="mt-6"><span class="text-5xl font-black text-zinc-900">$7.9K</span></p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Full Editorial Pass</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Art Direction Support</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Premium Printing</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Global Distribution</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> PR Campaign</li>
+          </ul>
+          <a href="contact.html" class="mt-8 block w-full text-center py-3 rounded-xl bg-[#8B4513] text-white font-bold hover:bg-[#6B3410] transition shadow-md">Get Started</a>
+        </div>
+        <div class="pricing-card bg-stone-50 rounded-3xl p-8 shadow-sm border-2 border-transparent hover:border-[#8B4513]/30">
+          <h3 class="text-2xl font-bold text-zinc-900">Enterprise</h3>
+          <p class="text-zinc-500 text-sm mt-1">For studios & collections</p>
+          <p class="mt-6"><span class="text-5xl font-black text-zinc-900">$14.9K</span></p>
+          <ul class="mt-8 space-y-4">
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Everything in Pro</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Full Art Team</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Deluxe Hardcover</li>
+            <li class="flex items-center gap-3 text-sm text-zinc-600"><i class="bi bi-check-circle-fill text-[#8B4513]"></i> Crowdfunding Mgmt</li>
+          </ul>
+          <a href="contact.html" class="mt-8 block w-full text-center py-3 rounded-xl border-2 border-[#8B4513] text-[#8B4513] font-bold hover:bg-[#8B4513] hover:text-white transition">Get Started</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-24 bg-stone-50">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-question-circle-fill me-2"></i>FAQ
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          Common Questions
+        </h2>
+      </div>
+      <div class="space-y-4" id="faqContainer">
+        <div class="bg-white rounded-2xl shadow-sm">
+          <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+            <span class="text-lg font-bold text-zinc-900">How long does the publishing process take?</span>
+            <i class="bi bi-chevron-down text-[#8B4513] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-zinc-600 leading-relaxed">
+            Typical timelines range from 6-12 months depending on the scope of your project. Script development takes 1-2 months, art production 3-6 months, and printing/distribution 2-3 months.
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm">
+          <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+            <span class="text-lg font-bold text-zinc-900">Do I retain rights to my work?</span>
+            <i class="bi bi-chevron-down text-[#8B4513] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-zinc-600 leading-relaxed">
+            Absolutely. We operate on a creator-owned model — you retain 100% ownership of your intellectual property. Our partnerships are built on fair, transparent contracts.
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm">
+          <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+            <span class="text-lg font-bold text-zinc-900">What format options are available?</span>
+            <i class="bi bi-chevron-down text-[#8B4513] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-zinc-600 leading-relaxed">
+            We offer standard comic book floppies, graphic novel softcovers, deluxe hardcovers, and digital editions. Custom trim sizes and premium finishes are also available.
+          </div>
+        </div>
+        <div class="bg-white rounded-2xl shadow-sm">
+          <button class="faq-btn w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+            <span class="text-lg font-bold text-zinc-900">Do you accept unsolicited submissions?</span>
+            <i class="bi bi-chevron-down text-[#8B4513] transition-transform duration-300"></i>
+          </button>
+          <div class="faq-answer hidden px-6 pb-6 text-zinc-600 leading-relaxed">
+            Yes! We review submissions year-round. Send us your script sample, concept art, and a brief pitch via our contact form. We respond within 2 weeks.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script>
+    function toggleFaq(btn) {
+      const answer = btn.nextElementSibling;
+      const icon = btn.querySelector('i');
+      answer.classList.toggle('hidden');
+      icon.classList.toggle('rotate-180');
+    }
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+</html>

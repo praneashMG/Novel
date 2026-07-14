@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About - InkForge</title>
+  <link rel="icon" href="images/logo.jpeg">
+  <script src="tailwind.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="navbar.css">
+  <link rel="stylesheet" href="footer.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --home-bg: #ffffff;
+      --text-color: #111111;
+    }
+    [data-theme="dark"] {
+      --home-bg: #000000;
+      --text-color: #ffffff;
+    }
+    body {
+      background-color: var(--home-bg) !important;
+      color: var(--text-color);
+      transition: background-color 0.4s ease, color 0.4s ease;
+    }
+    [data-theme="dark"] section, [data-theme="dark"] .card {
+      background-color: #111111 !important;
+      border-color: #333333 !important;
+    }
+    [data-theme="dark"] body, [data-theme="dark"] p, [data-theme="dark"] h1, [data-theme="dark"] h2, [data-theme="dark"] h3, [data-theme="dark"] h4, [data-theme="dark"] h5, [data-theme="dark"] h6, [data-theme="dark"] span, [data-theme="dark"] li, [data-theme="dark"] a, [data-theme="dark"] label, [data-theme="dark"] small, [data-theme="dark"] strong {
+      color: #ffffff !important;
+    }
+    [data-theme="dark"] main { background-color: #111111 !important; }
+    [data-theme="dark"] .bg-white, [data-theme="dark"] .bg-stone-50 { background-color: #111111 !important; }
+    [data-theme="dark"] .bg-white.rounded-2xl, [data-theme="dark"] .bg-stone-50.rounded-3xl { background-color: #1a1a1a !important; border-color: #2a2a2a !important; }
+    [data-theme="dark"] .text-stone-500, [data-theme="dark"] .text-stone-600, [data-theme="dark"] .text-zinc-500, [data-theme="dark"] .text-zinc-600 { color: #9ca3af !important; }
+    [data-theme="dark"] .text-stone-900, [data-theme="dark"] .text-zinc-900 { color: #f1f5f9 !important; }
+    [data-theme="dark"] .border-stone-100, [data-theme="dark"] .border-stone-200 { border-color: #2a2a2a !important; }
+    [data-theme="dark"] .hover\:bg-stone-100:hover { background-color: #1f1f1f !important; }
+
+    .timeline-dot::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 16px;
+      height: 16px;
+      background: #8B4513;
+      border-radius: 50%;
+      border: 4px solid white;
+      z-index: 1;
+      top: 0;
+    }
+    .team-card:hover .team-social {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .team-social {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.3s ease;
+    }
+    @media (max-width: 767px) {
+      .timeline-dot::before { left: 0; }
+    }
+    .parallax-bg {
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  </style>
+</head>
+<body class="font-sans">
+  <div id="navbar"></div>
+
+  <!-- HERO -->
+  <section class="relative min-h-[70vh] bg-[#0B0B0B] overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="images/bg3.jpg" class="w-full h-full object-cover" alt="">
+      <div class="absolute inset-0 bg-gradient-to-r from-black via-black/90 to-black/70"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-6 min-h-[70vh] flex items-center">
+      <div class="max-w-3xl mx-auto text-center">
+        <span class="inline-block px-4 py-2 rounded-full bg-[#8B4513]/20 border border-[#8B4513]/30 text-[#D2B48C] text-sm font-semibold mb-6">
+          <i class="bi bi-info-circle me-2"></i>About Us
+        </span>
+        <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none mb-6">
+          OUR <span class="text-[#8B4513]">STORY</span>
+        </h1>
+        <p class="text-lg md:text-xl text-zinc-300 max-w-2xl mx-auto leading-relaxed">
+          From a small collective of passionate storytellers to an independent publishing powerhouse — 
+          discover the journey behind InkForge Studio.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MISSION & VISION -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+            <i class="bi bi-bullseye me-2"></i>Our Mission
+          </span>
+          <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4 leading-tight">
+            Amplifying Voices <span class="text-[#8B4513]">Through Art</span>
+          </h2>
+          <p class="text-zinc-600 mt-6 leading-relaxed text-lg">
+            We exist to champion independent creators and bring bold, diverse stories to readers worldwide. 
+            Every artist deserves a platform, every story deserves to be told.
+          </p>
+          <p class="text-zinc-600 mt-4 leading-relaxed">
+            InkForge was built on the belief that comics and graphic novels are one of the most powerful 
+            mediums for storytelling — blending visual art with narrative depth to create experiences 
+            that stay with readers forever.
+          </p>
+          <div class="flex flex-wrap gap-6 mt-10">
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-[#8B4513]/10 rounded-xl flex items-center justify-center">
+                <i class="bi bi-check-lg text-[#8B4513] text-xl"></i>
+              </div>
+              <div>
+                <p class="font-bold text-zinc-900">Creator-Owned</p>
+                <p class="text-zinc-500 text-sm">Full rights retained</p>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <div class="w-12 h-12 bg-[#8B4513]/10 rounded-xl flex items-center justify-center">
+                <i class="bi bi-check-lg text-[#8B4513] text-xl"></i>
+              </div>
+              <div>
+                <p class="font-bold text-zinc-900">Global Reach</p>
+                <p class="text-zinc-500 text-sm">Worldwide distribution</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="relative">
+          <img src="images/img2.jpg" alt="" class="rounded-3xl shadow-2xl w-full h-[500px] object-cover">
+          <div class="absolute -bottom-6 -right-6 bg-[#8B4513] text-white rounded-2xl p-6 shadow-xl max-w-[200px]">
+            <p class="text-3xl font-black">2018</p>
+            <p class="text-sm text-white/80 mt-1">Founded in Portland</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-clock-history me-2"></i>Our Journey
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          The InkForge Timeline
+        </h2>
+        <p class="text-zinc-600 mt-5 leading-relaxed">
+          From a dream to a movement — here's how we grew.
+        </p>
+      </div>
+      <div class="relative max-w-4xl mx-auto">
+        <div class="absolute left-[9px] md:left-1/2 md:-translate-x-px top-0 h-full w-0.5 bg-stone-200"></div>
+        <div class="space-y-12">
+          <div class="relative pl-14 md:pl-0">
+            <div class="md:flex md:items-start md:gap-16">
+              <div class="md:w-1/2 md:text-right md:pr-16">
+                <h3 class="text-2xl font-black text-[#8B4513]">2018</h3>
+                <h4 class="text-xl font-bold text-zinc-900 mt-1">The Beginning</h4>
+                <p class="text-zinc-600 mt-3 leading-relaxed">Founded by a collective of 5 creators in a small Portland studio with a shared vision for indie comics.</p>
+              </div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </div>
+            <div class="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-[#8B4513] border-4 border-white -translate-x-1/2 z-10"></div>
+          </div>
+          <div class="relative pl-14 md:pl-0">
+            <div class="md:flex md:items-start md:gap-16">
+              <div class="hidden md:block md:w-1/2"></div>
+              <div class="md:w-1/2 md:pl-16">
+                <h3 class="text-2xl font-black text-[#8B4513]">2020</h3>
+                <h4 class="text-xl font-bold text-zinc-900 mt-1">First Bestseller</h4>
+                <p class="text-zinc-600 mt-3 leading-relaxed">Our debut graphic novel "Shadows of Eternity" hits #1 on independent comic charts and sells over 10,000 copies.</p>
+              </div>
+            </div>
+            <div class="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-[#8B4513] border-4 border-white -translate-x-1/2 z-10"></div>
+          </div>
+          <div class="relative pl-14 md:pl-0">
+            <div class="md:flex md:items-start md:gap-16">
+              <div class="md:w-1/2 md:text-right md:pr-16">
+                <h3 class="text-2xl font-black text-[#8B4513]">2022</h3>
+                <h4 class="text-xl font-bold text-zinc-900 mt-1">Expansion</h4>
+                <p class="text-zinc-600 mt-3 leading-relaxed">Grew to 25+ team members, launched distribution partnerships across North America and Europe.</p>
+              </div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </div>
+            <div class="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-[#8B4513] border-4 border-white -translate-x-1/2 z-10"></div>
+          </div>
+          <div class="relative pl-14 md:pl-0">
+            <div class="md:flex md:items-start md:gap-16">
+              <div class="hidden md:block md:w-1/2"></div>
+              <div class="md:w-1/2 md:pl-16">
+                <h3 class="text-2xl font-black text-[#8B4513]">2024</h3>
+                <h4 class="text-xl font-bold text-zinc-900 mt-1">Award Recognition</h4>
+                <p class="text-zinc-600 mt-3 leading-relaxed">Multiple Eisner and Harvey Award nominations. 50+ titles published with a growing readership of 50K+ worldwide.</p>
+              </div>
+            </div>
+            <div class="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-[#8B4513] border-4 border-white -translate-x-1/2 z-10"></div>
+          </div>
+          <div class="relative pl-14 md:pl-0">
+            <div class="md:flex md:items-start md:gap-16">
+              <div class="md:w-1/2 md:text-right md:pr-16">
+                <h3 class="text-2xl font-black text-[#8B4513]">2026</h3>
+                <h4 class="text-xl font-bold text-zinc-900 mt-1">The Future</h4>
+                <p class="text-zinc-600 mt-3 leading-relaxed">Launching our digital platform, expanding into animation, and continuing to champion independent creators worldwide.</p>
+              </div>
+              <div class="hidden md:block md:w-1/2"></div>
+            </div>
+            <div class="absolute left-[18px] md:left-1/2 md:-translate-x-1/2 top-1 w-4 h-4 rounded-full bg-[#8B4513] border-4 border-white -translate-x-1/2 z-10"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TEAM -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-people-fill me-2"></i>Our Team
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          Meet The Crew
+        </h2>
+        <p class="text-zinc-600 mt-5 leading-relaxed">
+          The passionate people behind InkForge — creators, dreamers, and comic lovers.
+        </p>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div class="group team-card bg-stone-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
+          <div class="overflow-hidden rounded-2xl mb-5">
+            <img src="images/team2.avif" alt="" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900">Ethan Carter</h3>
+          <p class="text-[#8B4513] font-medium text-sm">Founder & Director</p>
+          <p class="text-zinc-600 text-sm mt-3">Visionary storyteller with 15+ years in the comic industry.</p>
+          <div class="team-social flex justify-center gap-3 mt-4">
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="group team-card bg-stone-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
+          <div class="overflow-hidden rounded-2xl mb-5">
+            <img src="images/team1.avif" alt="" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900">Sophia Hayes</h3>
+          <p class="text-[#8B4513] font-medium text-sm">Art Director</p>
+          <p class="text-zinc-600 text-sm mt-3">Award-winning illustrator and visual storyteller.</p>
+          <div class="team-social flex justify-center gap-3 mt-4">
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-dribbble"></i></a>
+          </div>
+        </div>
+        <div class="group team-card bg-stone-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
+          <div class="overflow-hidden rounded-2xl mb-5">
+            <img src="images/team3.avif" alt="" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900">Lucas Morgan</h3>
+          <p class="text-[#8B4513] font-medium text-sm">Head of Publishing</p>
+          <p class="text-zinc-600 text-sm mt-3">Expert in creator partnerships and global distribution.</p>
+          <div class="team-social flex justify-center gap-3 mt-4">
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-envelope-fill"></i></a>
+          </div>
+        </div>
+        <div class="group team-card bg-stone-50 rounded-3xl p-6 shadow-sm hover:shadow-xl transition-all duration-300 text-center">
+          <div class="overflow-hidden rounded-2xl mb-5">
+            <img src="images/team4.jpg" alt="" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+          </div>
+          <h3 class="text-xl font-bold text-zinc-900">Maya Chen</h3>
+          <p class="text-[#8B4513] font-medium text-sm">Community Manager</p>
+          <p class="text-zinc-600 text-sm mt-3">Building bridges between creators and readers.</p>
+          <div class="team-social flex justify-center gap-3 mt-4">
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="w-8 h-8 bg-[#8B4513]/10 rounded-full flex items-center justify-center text-[#8B4513] hover:bg-[#8B4513] hover:text-white transition"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUES -->
+  <section class="py-24 bg-stone-50">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="text-[#8B4513] font-semibold uppercase tracking-[0.25em] text-sm">
+          <i class="bi bi-heart-fill me-2"></i>Our Values
+        </span>
+        <h2 class="text-4xl md:text-5xl font-black text-zinc-900 mt-4">
+          What We Stand For
+        </h2>
+      </div>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="bi bi-brush-fill text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-zinc-900 mb-4">Creative Freedom</h3>
+          <p class="text-zinc-600">Every creator retains full ownership of  work. We believe the best stories come from  artistic vision.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="bi bi-globe2 text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-zinc-900 mb-4">Diverse Voices</h3>
+          <p class="text-zinc-600">We actively seek and amplify underrepresented voices in comics — because perspective medium.</p>
+        </div>
+        <div class="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-all duration-300">
+          <div class="w-14 h-14 bg-[#8B4513]/10 rounded-2xl flex items-center justify-center mb-6">
+            <i class="bi bi-award-fill text-2xl text-[#8B4513]"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-zinc-900 mb-4">Quality First</h3>
+          <p class="text-zinc-600">From writing to printing, every title meets the highest standards of production and storytelling excellence.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="bg-gradient-to-br from-[#8B4513] to-[#6B3410] rounded-3xl p-8 md:p-16 shadow-2xl relative overflow-hidden text-center">
+        <div class="absolute inset-0 opacity-10">
+          <div class="absolute top-10 left-10 w-72 h-72 bg-white rounded-full blur-3xl"></div>
+          <div class="absolute bottom-10 right-10 w-96 h-96 bg-white rounded-full blur-3xl"></div>
+        </div>
+        <div class="relative z-10 max-w-3xl mx-auto">
+          <h2 class="text-4xl md:text-5xl font-black text-white leading-tight">
+            Be Part Of Our Story
+          </h2>
+          <p class="text-white/80 mt-5 text-lg leading-relaxed">
+            Whether you're a creator with a story to tell or a reader looking for your next favorite graphic novel — join the InkForge community.
+          </p>
+          <div class="flex flex-wrap gap-4 justify-center mt-10">
+            <a href="contact.html" class="px-8 py-4 bg-white text-[#8B4513] rounded-xl font-bold hover:bg-stone-100 transition shadow-lg">Get In Touch</a>
+            <a href="comics.html" class="px-8 py-4 border-2 border-white/30 text-white rounded-xl font-bold hover:bg-white/10 transition">Browse Comics</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer"></div>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Poppins', 'ui-sans-serif', 'system-ui'],
+          },
+        },
+      },
+    }
+    lucide.createIcons();
+  </script>
+  <script src="navbar.js"></script>
+  <script src="footer.js"></script>
+</body>
+</html>

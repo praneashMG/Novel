@@ -1,0 +1,6 @@
+[data-theme="dark"] footer {
+  background-color: #111111 !important;
+}
+[data-theme="dark"] footer .para{
+  color: #ffffff !important;
+}

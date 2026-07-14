@@ -1,0 +1,332 @@
+html,
+body {
+  max-width: 100% !important;
+  overflow-x: hidden !important;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== GLOBAL TYPOGRAPHY ===== */
+/* Headings: font-weight 550 */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 550 !important;
+}
+
+/* Body / paragraph text: 400 (regular) */
+p, li, span, label, small, caption {
+  font-weight: 400;
+}
+
+/* Ensure font-bold utility overrides global heading restrictions */
+.font-bold {
+  font-weight: 700 !important;
+}
+
+/* Keep CTA buttons bold — they need emphasis */
+a.rounded-full,
+button[type="submit"],
+.btn,
+.nav-cta {
+  font-weight: 600 !important;
+}
+
+/* Dark Mode: improved text contrast for common utilities */
+[data-theme="dark"] .text-slate-400 { color: #94a3b8 !important; }
+[data-theme="dark"] .text-slate-500 { color: #9ca3af !important; }
+[data-theme="dark"] .text-slate-600 { color: #cbd5e1 !important; }
+[data-theme="dark"] .text-slate-700 { color: #cbd5e1 !important; }
+[data-theme="dark"] .text-slate-800 { color: #e2e8f0 !important; }
+[data-theme="dark"] .text-slate-900 { color: #f1f5f9 !important; }
+[data-theme="dark"] .text-gray-400 { color: #9ca3af !important; }
+[data-theme="dark"] .text-gray-500 { color: #9ca3af !important; }
+[data-theme="dark"] .text-gray-600 { color: #cbd5e1 !important; }
+[data-theme="dark"] .text-gray-700 { color: #cbd5e1 !important; }
+[data-theme="dark"] .text-gray-800 { color: #e2e8f0 !important; }
+[data-theme="dark"] .text-gray-900 { color: #f1f5f9 !important; }
+
+/* Preserve Brand Blue across all pages in dark mode */
+/* This specific selector ensures blue text overrides the global white-text rule */
+[data-theme="dark"] .text-\[\#38BDF8\],
+[data-theme="dark"] [class*="text-[#38BDF8]"] {
+  color: #8B4513 !important;
+}
+
+/* ===== ACTIVE LINK ===== */
+.nav-active {
+  font-weight: 700;
+  color: #8B4513 !important;
+  position: relative;
+}
+
+.nav-active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 100%;
+  height: 2px;
+  border-radius: 2px;
+}
+
+/* Hide underline on dropdown items */
+#homeDropdownMenu li a.nav-active::after,
+#dashboardDropdownMenu li a.nav-active::after {
+  display: none;
+}
+
+/* ===== DARK MODE OVERRIDES ===== */
+[data-theme="dark"] #mainNavbar {
+  background-color: #111111 !important;
+}
+
+[data-theme="dark"] #mainNavbar a,
+[data-theme="dark"] #navLinks li a,
+[data-theme="dark"] #navLinks li button {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] #mobileMenu {
+  background-color: #111111 !important;
+  color: #ffffff !important;
+}
+
+/* Mobile menu nav links & buttons */
+[data-theme="dark"] #mobileMenu a,
+[data-theme="dark"] #mobileMenu .p-6 > ul a,
+[data-theme="dark"] #mobileDropdownBtn,
+[data-theme="dark"] #mobileDashboardBtn {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] #mobileMenu a:hover,
+[data-theme="dark"] #mobileDropdownBtn:hover,
+[data-theme="dark"] #mobileDashboardBtn:hover {
+  color: #8B4513 !important;
+}
+
+/* Mobile menu header border */
+[data-theme="dark"] #mobileMenu .border-b {
+  border-color: #333333 !important;
+}
+
+/* Mobile menu header title */
+[data-theme="dark"] #mobileMenu h2 {
+  color: #ffffff !important;
+}
+
+/* Mobile dropdown sub-menus */
+[data-theme="dark"] #mobileDropdownMenu,
+[data-theme="dark"] #mobileDashboardMenu {
+  background-color: #1a1a1a !important;
+  border-color: #333333 !important;
+}
+
+[data-theme="dark"] #mobileDropdownMenu a,
+[data-theme="dark"] #mobileDashboardMenu a {
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] #mobileDropdownMenu a:hover,
+[data-theme="dark"] #mobileDashboardMenu a:hover {
+  background-color: #222222 !important;
+  color: #8B4513 !important;
+}
+
+/* Mobile bottom extras section */
+[data-theme="dark"] #mobileMenu .border-t {
+  background-color: #0d0d0d !important;
+  border-color: #333333 !important;
+}
+
+/* Close button & toggle icons in mobile menu */
+[data-theme="dark"] #closeMenuBtn,
+[data-theme="dark"] #mobile-theme-toggle,
+[data-theme="dark"] #mobile-rtl-toggle {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] #closeMenuBtn:hover,
+[data-theme="dark"] #mobile-theme-toggle:hover,
+[data-theme="dark"] #mobile-rtl-toggle:hover {
+  color: #8B4513 !important;
+}
+
+/* Global Section & Card Overrides for Dark Mode */
+[data-theme="dark"] section,
+[data-theme="dark"] .card,
+[data-theme="dark"] .bg-white {
+  background-color: #111111 !important;
+  border-color: #333333 !important;
+}
+
+[data-theme="dark"] .border-gray-100,
+[data-theme="dark"] .border-gray-200,
+[data-theme="dark"] .border-slate-100,
+[data-theme="dark"] .border-slate-200 {
+  border-color: #333333 !important;
+}
+
+[data-theme="dark"] #homeDropdownMenu,
+[data-theme="dark"] #dashboardDropdownMenu {
+  background-color: #111111 !important;
+  border-color: #222222 !important;
+}
+
+[data-theme="dark"] #homeDropdownMenu a,
+[data-theme="dark"] #dashboardDropdownMenu a {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] #homeDropdownMenu a:hover,
+[data-theme="dark"] #dashboardDropdownMenu a:hover {
+  color: #8B4513 !important;
+}
+
+[data-theme="dark"] #hamburgerBtn i,
+[data-theme="dark"] #closeMenuBtn i,
+[data-theme="dark"] #rightButtons i,
+[data-theme="dark"] #rightButtons button {
+  color: #ffffff !important;
+}
+
+/* ===== HAMBURGER ICON ===== */
+#hamburgerBtn i {
+  color: #8B4513;
+}
+
+/* ===== BREAKPOINT: BELOW 1280px = MOBILE/TABLET MODE ===== */
+@media (max-width: 1279px) {
+  /* Hide desktop nav and right buttons */
+  #centerLinksWrapper {
+    display: none !important;
+  }
+
+  #rightButtons {
+    display: none !important;
+  }
+
+  /* Show hamburger */
+  #hamburgerBtn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* ===== BREAKPOINT: 1280px+ = DESKTOP MODE ===== */
+@media (min-width: 1280px) {
+  /* Show desktop nav and right buttons */
+  #centerLinksWrapper {
+    display: flex !important;
+  }
+
+  #rightButtons {
+    display: flex !important;
+  }
+
+  /* Hide hamburger and mobile menu */
+  #hamburgerBtn {
+    display: none !important;
+  }
+
+  #mobileMenuOverlay,
+  #mobileMenu {
+    display: none !important;
+  }
+
+  /* Reduce gap on exactly 1280px */
+  #navLinks {
+    gap: 20px;
+    font-size: 0.8rem;
+  }
+}
+
+/* ===== BREAKPOINT: 1440px+ = LARGE DESKTOP ===== */
+@media (min-width: 1440px) {
+  #navLinks {
+    gap: 28px;
+    font-size: 0.875rem;
+  }
+}
+
+/* ===== MOBILE MENU ANIMATION ===== */
+.mobile-menu-open {
+  overflow: hidden;
+}
+
+#mobileMenu.active {
+  transform: translateX(0);
+}
+
+#mobileMenuOverlay.active {
+  display: block !important;
+}
+
+#mobileDropdownMenu {
+  transition: max-height 0.3s ease-out;
+}
+
+#mobileDropdownMenu.show {
+  display: block !important;
+  animation: slideDown 0.3s ease-out;
+}
+
+/* Hide underline on mobile nav */
+@media (max-width: 1279px) {
+  .nav-active::after {
+    display: none;
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== SMALL MOBILE ===== */
+@media (max-width: 426px) {
+  #closeMenuBtn {
+    font-size: 20px;
+  }
+
+  #hamburgerBtn i {
+    font-size: 20px;
+  }
+}
+
+/* ===== GLOBAL THEME ENHANCEMENTS ===== */
+/* Light Mode Text Contrast (darken grays for readability) */
+html:not([data-theme="dark"]) .text-zinc-500,
+html:not([data-theme="dark"]) .text-slate-500,
+html:not([data-theme="dark"]) .text-gray-500,
+html:not([data-theme="dark"]) .text-stone-500 {
+  color: #4b5563 !important; /* ~600 weight */
+}
+
+html:not([data-theme="dark"]) .text-zinc-600,
+html:not([data-theme="dark"]) .text-slate-600,
+html:not([data-theme="dark"]) .text-gray-600,
+html:not([data-theme="dark"]) .text-stone-600 {
+  color: #374151 !important; /* ~700 weight */
+}
+
+html:not([data-theme="dark"]) .text-zinc-400,
+html:not([data-theme="dark"]) .text-slate-400,
+html:not([data-theme="dark"]) .text-gray-400,
+html:not([data-theme="dark"]) .text-stone-400 {
+  color: #6b7280 !important; /* ~500 weight */
+}
+
+/* Dark Mode Icon Glow */
+[data-theme="dark"] i.bi {
+  text-shadow: 0 0 8px currentColor;
+}
+[data-theme="dark"] svg {
+  filter: drop-shadow(0 0 6px currentColor);
+}
