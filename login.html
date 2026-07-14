@@ -36,15 +36,25 @@
     
     <!-- Brand Name / Logo -->
     <div class="text-center mb-8">
-     <h1 class="text-2xl text-slate-900 font-bold font-sans tracking-tight">
+     <h1 class="text-2xl text-slate-900 font-bold tracking-tight">
     <a href="index.html" class="flex items-center justify-center gap-2">
       <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <path d="M 20 80 L 80 80 L 70 60 L 30 60 Z" fill="#1e293b" />
-        <path d="M 30 60 L 70 60 L 60 40 L 40 40 Z" fill="#334155" />
-        <path d="M 10 40 L 90 40 L 90 30 L 10 30 Z" fill="#1e293b" rx="2" />
-        <path d="M 50 5 C 65 20, 65 40, 50 65 C 35 40, 35 20, 50 5 Z" fill="#8B4513" />
-        <line x1="50" y1="25" x2="50" y2="45" stroke="#fff" stroke-width="2" />
-        <circle cx="50" cy="45" r="2.5" fill="#fff" />
+        <defs>
+          <linearGradient id="logoGradLog" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#8B4513" />
+            <stop offset="100%" stop-color="#D2B48C" />
+          </linearGradient>
+          <linearGradient id="metalGradLog" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#475569" />
+            <stop offset="100%" stop-color="#1e293b" />
+          </linearGradient>
+        </defs>
+        <polygon points="50,90 15,70 15,30 50,10 85,30 85,70" fill="url(#metalGradLog)" />
+        <polygon points="50,85 20,67 20,33 50,15 80,33 80,67" fill="#0f172a" />
+        <path d="M 50,20 L 70,55 L 50,50 L 30,55 Z" fill="url(#logoGradLog)" />
+        <path d="M 50,80 C 40,65 60,65 50,80 Z" fill="url(#logoGradLog)" />
+        <line x1="50" y1="20" x2="50" y2="45" stroke="#fff" stroke-width="2" />
+        <circle cx="50" cy="47" r="2.5" fill="#fff" />
       </svg>
       <span>Ink<span style="color: #8B4513">Forge</span></span>
     </a>
