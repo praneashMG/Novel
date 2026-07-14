@@ -49,6 +49,21 @@
     /* Dark mode: borders */
     [data-theme="dark"] .border-stone-100, [data-theme="dark"] .border-stone-200, [data-theme="dark"] .border-stone-300 { border-color: #2a2a2a !important; }
 
+    /* Dark mode: subtle icon glow */
+    [data-theme="dark"] i.bi {
+      text-shadow: 0 0 10px currentColor;
+    }
+
+    /* Light mode: improve text contrast */
+    html:not([data-theme="dark"]) .text-zinc-400,
+    html:not([data-theme="dark"]) .text-stone-400 {
+      color: #52525b !important; /* equivalent to zinc-600 */
+    }
+    html:not([data-theme="dark"]) .text-zinc-500,
+    html:not([data-theme="dark"]) .text-stone-500 {
+      color: #3f3f46 !important; /* equivalent to zinc-700 */
+    }
+
     .shop-card:hover .shop-cart-btn {
       transform: translateY(0);
       opacity: 1;
