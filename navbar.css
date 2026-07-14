@@ -30,7 +30,8 @@ button[type="submit"],
   font-weight: 600 !important;
 }
 
-/* Dark Mode: improved text contrast for common utilities */
+/* ===== GLOBAL THEME ENHANCEMENTS ===== */
+/* Dark Mode: improved text contrast */
 [data-theme="dark"] .text-slate-400 { color: #94a3b8 !important; }
 [data-theme="dark"] .text-slate-500 { color: #9ca3af !important; }
 [data-theme="dark"] .text-slate-600 { color: #cbd5e1 !important; }
@@ -43,6 +44,21 @@ button[type="submit"],
 [data-theme="dark"] .text-gray-700 { color: #cbd5e1 !important; }
 [data-theme="dark"] .text-gray-800 { color: #e2e8f0 !important; }
 [data-theme="dark"] .text-gray-900 { color: #f1f5f9 !important; }
+
+/* Light Mode: Improve text contrast globally for lighter utilities */
+html:not([data-theme="dark"]) .text-zinc-400,
+html:not([data-theme="dark"]) .text-stone-400,
+html:not([data-theme="dark"]) .text-slate-400,
+html:not([data-theme="dark"]) .text-gray-400 {
+  color: #52525b !important; /* darker gray for better contrast */
+}
+
+html:not([data-theme="dark"]) .text-zinc-500,
+html:not([data-theme="dark"]) .text-stone-500,
+html:not([data-theme="dark"]) .text-slate-500,
+html:not([data-theme="dark"]) .text-gray-500 {
+  color: #3f3f46 !important; /* darker gray for better contrast */
+}
 
 /* Preserve Brand Blue across all pages in dark mode */
 /* This specific selector ensures blue text overrides the global white-text rule */
